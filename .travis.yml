@@ -1,0 +1,9 @@
+language: go
+go: "1.23.3"
+
+matrix:
+  include:
+    - os: windows
+
+script:
+  - echo "This is a test on Windows"
