@@ -1,13 +1,16 @@
-os: windows
-
 language: go
-
 go: "1.23.3"
 
+os: windows
+
 before_install:
-  - echo "Installing Go 1.23.3 manually..."
-  - curl -sSfL https://golang.org/dl/go1.23.3.windows-amd64.msi -o go.msi
-  - msiexec /i go.msi /quiet
+  - echo "Installing gobrew and Go 1.23.3 manually..."
+  # Install gobrew
+  - curl -sSfL https://github.com/kevincobain2000/gobrew/raw/master/scripts/install.sh | bash
+  - export PATH=$HOME/.gobrew/bin:$PATH  # Ensure gobrew is in the PATH
+  # Install Go 1.23.3 using gobrew
+  - gobrew install 1.23.3
+  - gobrew use 1.23.3  # Set Go version to 1.23.3
   - go version  # Verify Go installation
 
 script:
