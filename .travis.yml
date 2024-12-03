@@ -1,5 +1,9 @@
 os: windows
 
+language: go
+
+go: "1.23.3"
+
 before_install:
   - echo "Installing Go 1.23.3 manually..."
   - curl -sSfL https://golang.org/dl/go1.23.3.windows-amd64.msi -o go.msi
@@ -8,4 +12,4 @@ before_install:
 
 script:
   - echo "Running build step"
-  - go version  # Check Go version to confirm installation...
+  - go version  # Check Go version to confirm installation
