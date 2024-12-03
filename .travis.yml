@@ -1,10 +1,11 @@
-language: go
-go: "1.23.3"
+os: windows
 
-matrix:
-  include:
-    - os: windows
-    - os: linux
+before_install:
+  - echo "Installing Go 1.23.3 manually..."
+  - curl -sSfL https://golang.org/dl/go1.23.3.windows-amd64.msi -o go.msi
+  - msiexec /i go.msi /quiet
+  - go version  # Verify Go installation
 
 script:
-  - echo "This is a test on Windows."
+  - echo "Running build step"
+  - go version  # Check Go version to confirm installation
