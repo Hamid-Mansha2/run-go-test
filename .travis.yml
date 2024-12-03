@@ -4,8 +4,6 @@ go: "1.23.3"
 matrix:
   include:
     - os: windows
-    - os: linux
-
 
 script:
-  - echo "This is a test on Windows"
+  - echo "This is a test on Windows."
